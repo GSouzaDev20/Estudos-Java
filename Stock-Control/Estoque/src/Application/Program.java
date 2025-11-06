@@ -21,20 +21,39 @@ public class Program {
         System.out.println("Product data: " + product);
         System.out.println();
 
-        System.out.print("Enter the number of products to be added in stock: ");
-        int quantity = sc.nextInt();
-        product.addQuantity(quantity);
+        while (true) {
 
-        System.out.println();
-        System.out.println("Product data: " + product);
-        System.out.println();
+            System.out.println("1 - ADD PRODUCTS");
+            System.out.println("2 - REMOVE PRODUCTS");
+            System.out.println("0 - Exit");
+            int choice = sc.nextInt();
 
-        System.out.print("Enter the number of products to be removed from stock: ");
-        quantity = sc.nextInt();
-        product.removeQuantity(quantity);
+            if (choice == 0){
+                System.out.println("Closing program");
+                break;
+            }
 
-        System.out.println();
-        System.out.println("Product data: " + product);
-        System.out.println();
+            if (choice == 1) {
+                System.out.print("Enter the number of products to be added in stock: ");
+                int quantity = sc.nextInt();
+                product.addQuantity(quantity);
+
+                System.out.println();
+                System.out.println("Product data: " + product);
+                System.out.println();
+            }
+            else if (choice == 2) {
+                System.out.print("Enter the number of products to be removed from stock: ");
+                int quantity = sc.nextInt();
+                product.removeQuantity(quantity);
+
+                System.out.println();
+                System.out.println("Product data: " + product);
+                System.out.println();
+            }
+            else {
+                System.out.println("Chose a valid option");
+            }
+        }
     }
 }
